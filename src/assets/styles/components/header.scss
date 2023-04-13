@@ -1,0 +1,51 @@
+@use '../variables';
+.header {
+  background: #ffffff;
+  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.15);
+  padding: 17px 16px 18px 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  .logo {
+    height: 25px;
+    width: 45px;
+  }
+  .links {
+    display: flex;
+    a {
+      font-size: 12.5px;
+
+      font-weight: 700;
+      line-height: 22px;
+      text-decoration: none;
+      margin-right: 26px;
+      color: variables.$primary;
+    }
+    .active {
+      color: variables.$text;
+    }
+  }
+}
+@media only screen and (min-width: 845px) {
+  .header {
+  }
+}
+@media only screen and (min-width: 767px) {
+  .header {
+    padding: 17px 80px 18px 76px;
+
+    .links {
+      a {
+        font-size: 14px;
+      }
+    }
+    .logo {
+      width: 70px;
+      height: 39px;
+    }
+  }
+}

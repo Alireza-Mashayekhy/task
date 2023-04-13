@@ -1,0 +1,398 @@
+@use '../variables';
+.home {
+  display: flex;
+  justify-content: center;
+  .addAddress {
+    max-width: 806px;
+    margin: 32px 16px;
+    min-height: 850px;
+    margin-top: 86px;
+
+    h5 {
+      margin-bottom: 6px;
+      margin-top: 0px;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    .form {
+      padding: 15px 16px;
+      background: #ffffff;
+      border: 1px solid #edf0f2;
+      box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      .text {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        margin-bottom: 33px;
+      }
+      .inputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .input {
+          max-width: 100% !important;
+          width: 100%;
+          .clearIcon {
+            position: absolute;
+            left: 12px;
+            bottom: 53px;
+            z-index: 2;
+            cursor: pointer;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .addressInput {
+          width: 100%;
+          min-width: 10px;
+          .clearIcon {
+            position: absolute;
+            left: 12px;
+            bottom: 53px;
+            z-index: 2;
+            cursor: pointer;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .error {
+          outline: 1px solid variables.$secondary !important;
+        }
+        input {
+          height: 46px;
+          border-radius: 5px;
+          border: 1px solid variables.$grayBorder;
+          margin-bottom: 38px;
+          margin-top: 7px;
+          padding: 10px;
+          font-weight: 500;
+          font-size: 14px;
+          &:focus {
+            outline: 1px solid variables.$primary;
+          }
+          &::placeholder {
+            color: #b6b6b6;
+            opacity: 1; /* Firefox */
+            font-weight: 400px;
+          }
+
+          &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #b6b6b6;
+            font-weight: 400px;
+          }
+
+          &::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: #b6b6b6;
+            font-weight: 400px;
+          }
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          /* Firefox */
+          &[type='number'] {
+            -moz-appearance: textfield;
+          }
+        }
+        label {
+          font-weight: 500;
+          font-size: 14px;
+        }
+        .labels {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 3px;
+          span {
+            font-weight: 400;
+            font-size: 11px;
+            color: #757575;
+          }
+          .secondLabel {
+            font-weight: 400;
+            font-size: 10px;
+            color: #757575;
+          }
+        }
+        .gender {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          margin-top: 15px;
+          .title {
+            margin-left: 60px;
+          }
+          input {
+            height: 17px;
+            margin: 0px;
+            margin-left: 9px;
+            cursor: pointer;
+            accent-color: #00a58e;
+            &:focus {
+              outline: none;
+            }
+          }
+          label {
+            margin-left: 27px;
+          }
+        }
+        .errorText {
+          position: absolute;
+          color: #e61236;
+          font-weight: 400;
+          font-size: 10px;
+          bottom: 15px;
+        }
+      }
+    }
+  }
+  .selectLocation {
+    margin-top: 0px;
+    max-width: 806px;
+    width: 100%;
+    min-height: 500px;
+    .title {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 18px 19px;
+      z-index: 2;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 6px;
+      .rightArrow {
+        position: absolute;
+        right: 16px;
+      }
+      img {
+        margin-left: 12px;
+        cursor: pointer;
+      }
+      span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+      }
+      .mobile {
+        display: block;
+      }
+      .desktop {
+        display: none;
+      }
+    }
+    .mapDiv {
+      width: 100%;
+      filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.25));
+      .mapTitle {
+        background: #ffffff;
+        border-radius: 4px 4px 0px 0px;
+        padding: 10px 48px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        display: none;
+      }
+      #map {
+        width: 100%;
+        height: 100vh;
+      }
+    }
+  }
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 550px;
+    // margin: 100px 0px;
+    width: 100%;
+    padding-top: 284px;
+    .message {
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 8px;
+      margin-bottom: 39px;
+    }
+    a {
+      width: 100%;
+      max-width: 310px;
+      padding: 0px 16px;
+      button {
+        cursor: pointer;
+        border: 1.5px solid variables.$primary;
+        border-radius: 4px;
+        padding: 12px 0px;
+        width: 100%;
+        font-weight: 700;
+        font-size: 16px;
+        color: variables.$primary;
+        background-color: inherit;
+      }
+    }
+  }
+  .reqError {
+    font-size: 25px;
+    font-weight: 700px;
+    position: fixed;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    span {
+      background-color: red;
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+  }
+  .nextStep {
+    padding: 19px;
+    background: #ffffff;
+    box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+    button {
+      background: variables.$primary;
+      border-radius: 4px;
+      padding: 12px;
+      height: 42px;
+      width: 100%;
+
+      font-weight: 700;
+      font-size: 16px;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      .balls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .ball {
+          background-color: white;
+          width: 14px;
+          height: 14px;
+          border-radius: 100%;
+          margin-right: 4px;
+          margin-left: 4px;
+          display: inline-block;
+          animation: ballsAnimation 0.5s infinite alternate;
+        }
+        .ball2 {
+          background-color: white;
+          width: 9px;
+          height: 9px;
+          border-radius: 100%;
+          margin-right: 4px;
+          margin-left: 4px;
+          display: inline-block;
+          animation: ballsAnimation 0.5s infinite alternate-reverse;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 766px) {
+  .home {
+    .addAddress {
+      margin-top: 120px;
+      .form {
+        padding: 22px 48px 30px 48px;
+        .text {
+          font-weight: 700;
+          font-size: 16px;
+        }
+        .inputs {
+          .addressInput {
+          }
+        }
+      }
+    }
+    .selectLocation {
+      margin: 100px auto 32px auto;
+      .title {
+        background-color: inherit;
+        position: relative;
+        top: 0px;
+        justify-content: start;
+        .rightArrow {
+          position: relative;
+
+          right: 0px;
+        }
+        .desktop {
+          display: block;
+        }
+        .mobile {
+          display: none;
+        }
+      }
+      .mapDiv {
+        .mapTitle {
+          display: block;
+        }
+        #map {
+          height: 338px;
+        }
+      }
+    }
+    .nextStep {
+      button {
+        width: 224px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 845px) {
+  .home {
+    .addAddress {
+      min-height: 550px;
+
+      .form {
+        .inputs {
+          .input {
+            max-width: 28% !important;
+            min-width: 222px;
+          }
+          .addressInput {
+            max-width: 65%;
+            min-width: 466px;
+          }
+          input {
+            font-weight: 700;
+            font-size: 14px;
+          }
+          label {
+            font-weight: 500;
+            font-size: 14px;
+          }
+          .labels {
+            span {
+              font-weight: 400;
+              font-size: 11px;
+            }
+            .secondLabel {
+              font-weight: 400;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
