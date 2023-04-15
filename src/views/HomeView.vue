@@ -389,18 +389,6 @@ export default {
                 'Api-Key': 'service.6c9945dc5b254c40ae1f783420cf0d19'
               }
             }
-            //sending get request
-            this.axios
-              .get(url, params)
-              .then((data) => {
-                myMap.flyTo([centerLat.value, centerLng.value], 16)
-                marker.bindPopup(data.data.formatted_address).openPopup()
-                document.getElementById('address').textContent = data.data.formatted_address
-              })
-              .catch((err) => {
-                console.log('error = ' + err)
-                log.textContent = 'Nothing found'
-              })
           }
           this.centerLat = document.getElementById('center_lat')
           this.centerLng = document.getElementById('center_lng')
